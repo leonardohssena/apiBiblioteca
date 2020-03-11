@@ -1,0 +1,18 @@
+version: 2
+services:
+  app:
+    image: api-test-in8-production
+    environment:
+      NODE_ENV: production
+      PORT: 80
+      mongoDB: mongodb+srv://useraccess:4UGcUNVI1oNUglSB@cluster0-i1knx.mongodb.net/in8?retryWrites=true&w=majority
+    ports:
+      - 8001:80/tcp
+  app-dev:
+    image: api-test-in8-development
+    environment: 
+      NODE_ENV: development
+      PORT: 80
+      mongoDB: mongodb+srv://useraccess:4UGcUNVI1oNUglSB@cluster0-i1knx.mongodb.net/in8?retryWrites=true&w=majority
+    ports:
+      - 3001:80/tcp
